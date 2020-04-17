@@ -5,8 +5,8 @@
 //Il numero ottenuto appare al centro del quadrato
 
 $(document).ready(function(){
-  generaGriglia();
 
+  generaGriglia();
 
   $('.quadrato').click(function(){
     var self = $(this);
@@ -14,12 +14,16 @@ $(document).ready(function(){
         url : "https://flynn.boolean.careers/exercises/api/random/int",
         method : "GET",
         success : function (data) {
-          if(data.response <= 5){
-            self.addClass("giallo");
+          if (self.hasClass("numero")) {
+            alert("Hai già cliccato questa casella!")
           } else {
-            self.addClass("verde");
+            if(data.response <= 5){
+              self.addClass("giallo");
+            } else {
+              self.addClass("verde");
+            }
+            self.text(data.response).addClass("numero");
           }
-          self.text(data.response).addClass("numero");
         },
         error : function (richiesta,stato,errori) {
           console.log("E' avvenuto un errore. " + errori, "stato " + stato, richiesta);
