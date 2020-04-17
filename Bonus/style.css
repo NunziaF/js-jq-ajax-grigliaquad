@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.quadrato {
+  border:  1px solid black;
+  width: calc(100% / 6);
+  height: calc(100% / 6);
+  display: flex;
+}
+
+.giallo {
+  background-color: yellow;
+}
+
+.verde {
+  background-color: green;
+}
+
+.numero{
+  color: blue;
+  justify-content: center;
+  align-items: center;
+}
